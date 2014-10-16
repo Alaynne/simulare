@@ -102,28 +102,10 @@ public class AppController {
 	
 	}
 	
-//	/**
-//	 * Conecta a base de testes da aplicação.
-//	 * 
-//	 * @throws DBException - se ocorrer algum erro de acesso à base de dados 
-//	 * que impeça a conexão.
-//	 */
-	public void conectarTeste() throws DBException {
-		
-		DBManager dbManager = DBManager.getInstance();
-		
-		dbManager.setStockDAO(new StockDAOImplementation());
-		dbManager.setPriceDAO(new PriceDAOImplementation());
-		dbManager.connect("com.mysql.jdbc.Driver", 
-				"jdbc:mysql://localhost/simulare_db_test", "root", "mysql");
-		
-	}
-
 	/**
-	 * Conecta a base de dados da aplicação.
+	 * It connects the database of the application.
 	 * 
-	 * @throws DBException - se ocorrer algum erro de acesso à base de dados 
-	 * que impeça a conexão.
+	 * @throws DBException - if a database error occurs.
 	 */
 	public void connectDataBase() throws DBException {
 		
@@ -131,8 +113,7 @@ public class AppController {
 
 		dbManager.setStockDAO(new StockDAOImplementation());
 		dbManager.setPriceDAO(new PriceDAOImplementation());
-		dbManager.connect("com.mysql.jdbc.Driver", 
-				"jdbc:mysql://localhost/simulare_db", "root", "mysql");
+		dbManager.connect("com.mysql.jdbc.Driver", "url", "username", "password");
 	}
 	
 	/**
